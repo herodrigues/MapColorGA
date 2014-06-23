@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/bold.png</file>
+        <file>images/bringtofront.png</file>
+        <file>images/delete.png</file>
+        <file>images/erase.png</file>
+        <file>images/linepointer.png</file>
+        <file>images/mapabrasil.png</file>
+        <file>images/pointer.png</file>
+        <file>images/sendtoback.png</file>
+        <file>images/winicon.ico</file>
+    </qresource>
+</RCC>

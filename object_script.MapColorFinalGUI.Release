@@ -1,0 +1,12 @@
+INPUT(
+./release/arrow.o
+./release/ellipseitem.o
+./release/main.o
+./release/mainscene.o
+./release/mainwindow.o
+./release/mapcolorga.o
+./release/drawbrmap.o
+./release/qrc_myresources.o
+./release/moc_mainscene.o
+./release/moc_mainwindow.o
+);

@@ -26,11 +26,10 @@
 **
 ****************************************************************************/
 
-#include <QtGui/QApplication>
+#include <QtWidgets/QApplication>
 #include "mainwindow.h"
 #include "mapcolorga.h"
 #include "mainscene.h"
-
 using namespace std;
 
 int main(int argc, char *argv[])

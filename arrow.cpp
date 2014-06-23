@@ -27,10 +27,10 @@
 ****************************************************************************/
 
 #include "arrow.h"
-#include <QtGui>
+#include <QtWidgets>
 
 Arrow::Arrow(EllipseItem *startItem, EllipseItem *endItem,
-         QGraphicsItem *parent, QGraphicsScene *scene) : QGraphicsLineItem(parent, scene)
+         QGraphicsItem *parent) : QGraphicsLineItem(parent)
 {
     myStartItem = startItem;
     myEndItem = endItem;
@@ -99,4 +99,3 @@ void Arrow::paint(QPainter *painter, const QStyleOptionGraphicsItem *,
         painter->drawLine(myLine);
     }
 }
-

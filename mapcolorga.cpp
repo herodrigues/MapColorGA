@@ -133,7 +133,7 @@ void MapColorGA::mutation() {
 
     if(myMutations > myCrossing*2) return;
 
-    // gerando numeros nao repetido sorteados a sofrerem mutação
+    // gerando numeros nao repetidos sorteados a sofrerem mutação
     while( numbers.size() < (unsigned int) myMutations )
         numbers.insert(rand() % (myCrossing*2));
 
@@ -238,7 +238,7 @@ void MapColorGA::printPopulation(int k) {
 void MapColorGA::printParcialResult(int i) {
     cout << "Geração nº " << i+1 << endl;
     printPopulation(-1);
-    sleep(1);
+    //sleep(1);
     //system("clear");
 }
 

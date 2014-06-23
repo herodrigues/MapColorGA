@@ -26,7 +26,7 @@
 **
 ****************************************************************************/
 
-#include <QtGui>
+#include <QtWidgets>
 
 #include "mainscene.h"
 #include "arrow.h"

@@ -26,13 +26,12 @@
 **
 ****************************************************************************/
 
-#include <QtGui>
+#include <QtWidgets>
 
 #include "ellipseitem.h"
 #include "arrow.h"
 
-EllipseItem::EllipseItem(QMenu *contextMenu, int id, QGraphicsItem *parent,
-                         QGraphicsScene *scene) : QGraphicsPolygonItem(parent, scene)
+EllipseItem::EllipseItem(QMenu *contextMenu, int id, QGraphicsItem *parent) : QGraphicsPolygonItem(parent)
 {
     myContextMenu = contextMenu;
     myId = id;

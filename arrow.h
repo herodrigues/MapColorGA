@@ -47,8 +47,7 @@ class Arrow : public QGraphicsLineItem
 public:
     enum { Type = UserType + 4 };
 
-    Arrow(EllipseItem *startitem, EllipseItem* endItem,
-          QGraphicsItem *parent = 0, QGraphicsScene *scene = 0);
+    Arrow(EllipseItem *startitem, EllipseItem* endItem, QGraphicsItem *parent = 0);
 
     int type() const
         { return Type; }

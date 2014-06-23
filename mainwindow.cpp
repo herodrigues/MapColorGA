@@ -26,7 +26,7 @@
 **
 ****************************************************************************/
 
-#include <QtGui>
+#include <QtWidgets>
 #include <QLabel>
 
 #include "mainwindow.h"
@@ -34,12 +34,13 @@
 #include "mainscene.h"
 #include "mapcolorga.h"
 #include <iostream>
+#include <time.h>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-    QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
+//    QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
 
     ui->setupUi(this);
 
@@ -287,6 +288,7 @@ void MainWindow::generateSolution() {
 
         // loop das gerações
         int i;
+
         for(i = 0; i < myGA.getGenerations(); i++) {
             myGA.crossing();    // realiza cruzamentos e calcula os fitness dos filhos
             myGA.mutation();    // realiza mutação e recalcula os fitness dos filhos
@@ -294,8 +296,8 @@ void MainWindow::generateSolution() {
 
             //myGA.printParcialResult(i); // imprime população parcial
 
-            // com essa condiçãoo ele irá parar ao encontrar o primeiro fitness máximo
-            // sem ela, a população final será toda com fitness máximo
+            // com essa condição, o programa irá parar ao encontrar o primeiro fitness máximo
+            // sem ela, toda a população final estará com fitness máximo
             if(scene->getAdjMatrix().size() == static_cast<unsigned int>(it->first)) break;
         }
         //myGA.printPopulation(i); // imprime população final
@@ -316,10 +318,10 @@ void MainWindow::generateSolution() {
         scene->setItemColor(-1);
         QString result;
 
-        if(it->first == scene->getTotalEdges()*2) result = "Achei a solução ótima na " + QString::number(i+1) + "ª geração! \\o/";
-        else result = "Não achei solução ótima :( So bad";
+        if(it->first == scene->getTotalEdges()*2) result = "Achei a solução ótima na " + QString::number(i+1) + "ª geração!";
+        else result = "Não achei solução ótima!";
 
-        QMessageBox::about(this, "Tenho algo a lhe dizer ...", result);
+        QMessageBox::about(this, "Resultado", result);
         ui->actionCromossomo_final->setEnabled(true);
     }
 }

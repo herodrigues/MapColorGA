@@ -53,8 +53,7 @@ class EllipseItem : public QGraphicsPolygonItem {
 public:
     enum { Type = UserType + 15 };
 
-    EllipseItem(QMenu *contextMenu, int count,
-                QGraphicsItem *parent = 0, QGraphicsScene *scene = 0);
+    EllipseItem(QMenu *contextMenu, int count, QGraphicsItem *parent = 0);
 
     int getId()
         { return myId; }
