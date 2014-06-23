@@ -2,6 +2,7 @@ MapColorGA
 ==========
 
 Map coloring using genetic algortihms
+
 Developed by @herodrigues and @marcosraylan
 
 ----------
