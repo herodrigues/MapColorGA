@@ -11,7 +11,7 @@ INSTRUCTIONS TO CREATE THE PROGRAM EXECUTABLE
 
 === Unix ===
 
-    On Unix-based systems, open a terminal a run the command make
+    On Unix-based systems, open a terminal and run "make"
 
 === WINDOWS ===
 
