@@ -29,7 +29,7 @@
      <rect>
       <x>240</x>
       <y>0</y>
-      <width>850</width>
+      <width>914</width>
       <height>551</height>
      </rect>
     </property>
@@ -442,8 +442,8 @@ color: rgb(255, 255, 0);</string>
      <rect>
       <x>10</x>
       <y>360</y>
-      <width>214</width>
-      <height>29</height>
+      <width>216</width>
+      <height>33</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -535,7 +535,7 @@ color: rgb(255, 255, 0);</string>
       <x>10</x>
       <y>490</y>
       <width>211</width>
-      <height>35</height>
+      <height>43</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_6">
@@ -571,7 +571,7 @@ cromossomo final:</string>
      <x>0</x>
      <y>0</y>
      <width>1099</width>
-     <height>21</height>
+     <height>27</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuArquivo">

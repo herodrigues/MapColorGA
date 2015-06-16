@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.3.0
+** Created by: Qt User Interface Compiler version 5.4.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -142,7 +142,7 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         layoutWidget = new QWidget(centralWidget);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(240, 0, 850, 551));
+        layoutWidget->setGeometry(QRect(240, 0, 914, 551));
         verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
@@ -380,7 +380,7 @@ public:
 
         layoutWidget2 = new QWidget(centralWidget);
         layoutWidget2->setObjectName(QStringLiteral("layoutWidget2"));
-        layoutWidget2->setGeometry(QRect(10, 360, 214, 29));
+        layoutWidget2->setGeometry(QRect(10, 360, 216, 33));
         horizontalLayout_4 = new QHBoxLayout(layoutWidget2);
         horizontalLayout_4->setSpacing(6);
         horizontalLayout_4->setContentsMargins(11, 11, 11, 11);
@@ -442,7 +442,7 @@ public:
 
         layoutWidget4 = new QWidget(centralWidget);
         layoutWidget4->setObjectName(QStringLiteral("layoutWidget4"));
-        layoutWidget4->setGeometry(QRect(10, 490, 211, 35));
+        layoutWidget4->setGeometry(QRect(10, 490, 211, 43));
         horizontalLayout_6 = new QHBoxLayout(layoutWidget4);
         horizontalLayout_6->setSpacing(6);
         horizontalLayout_6->setContentsMargins(11, 11, 11, 11);
@@ -465,7 +465,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1099, 21));
+        menuBar->setGeometry(QRect(0, 0, 1099, 27));
         menuArquivo = new QMenu(menuBar);
         menuArquivo->setObjectName(QStringLiteral("menuArquivo"));
         menuItem = new QMenu(menuBar);
