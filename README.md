@@ -1,21 +1,20 @@
-MapColorGA
-==========
+# MapColorGA
 
 Map coloring using genetic algortihms
 
-Developed by @herodrigues and @marcosraylan
+## Installation
 
-----------
+### Unix
 
-INSTRUCTIONS TO CREATE THE PROGRAM EXECUTABLE
+On Unix-based systems, open a terminal and run `make`.
 
-=== Unix ===
+### Windows
 
-    On Unix-based systems, open a terminal and run "make"
+Edit Makefile and set your Windows compiler (MinGW, Visual C++, etc).
+Run `make`.
 
-=== WINDOWS ===
+### Using Qt Creator
 
-    Edit Makefile and set your Windows compiler (MinGW, Visual C++, etc)
-    Another option is to execute Qt Creator, open the project e run it.
+Another option is to execute Qt Creator, open the project file (MapColorFinalGUI.pro) e run it.
 
-
+An executable will be created in the project root folder.

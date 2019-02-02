@@ -7,7 +7,7 @@ DEPENDPATH += .
 INCLUDEPATH += .
 
 CONFIG += qt
-QT += core gui declarative widgets
+QT += core gui widgets
 
 # Input
 HEADERS += arrow.h \
@@ -15,8 +15,7 @@ HEADERS += arrow.h \
     mainscene.h \
     mainwindow.h \
     mapcolorga.h
-FORMS += mainwindow.ui \
-    dialogprogressbar.ui
+FORMS += mainwindow.ui
 SOURCES += arrow.cpp \
     ellipseitem.cpp \
     main.cpp \

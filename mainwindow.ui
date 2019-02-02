@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1099</width>
-    <height>609</height>
+    <height>540</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -24,546 +24,407 @@
     <normaloff>:/images/winicon.ico</normaloff>:/images/winicon.ico</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>240</x>
-      <y>0</y>
-      <width>914</width>
-      <height>551</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_5">
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
-         <item>
-          <widget class="QRadioButton" name="radioButtonItem">
-           <property name="text">
-            <string>Vértice</string>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QLabel" name="label_6">
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Initial population</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_2">
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Crossover</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_3">
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Mutation</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_4">
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Generation</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QLineEdit" name="lineEditInitPop">
+            <property name="accessibleName">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEditCrossings">
+            <property name="accessibleName">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEditMutations">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEditGenerations">
+            <property name="accessibleName">
+             <string/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="groupBox">
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(218, 218, 218);</string>
+        </property>
+        <property name="title">
+         <string>Selecionar Cores</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="0" column="0">
+          <widget class="QCheckBox" name="cbRed">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
            </property>
-           <property name="icon">
-            <iconset>
-             <normaloff>images/bold.png</normaloff>images/bold.png</iconset>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string>Red</string>
            </property>
           </widget>
          </item>
-         <item>
-          <widget class="QRadioButton" name="radioButtonEdge">
-           <property name="text">
-            <string>Aresta</string>
+         <item row="0" column="1">
+          <widget class="QCheckBox" name="cbCyan">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
            </property>
-           <property name="icon">
-            <iconset>
-             <normaloff>images/linepointer.png</normaloff>images/linepointer.png</iconset>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 255, 255);
+</string>
+           </property>
+           <property name="text">
+            <string>Aqua</string>
            </property>
           </widget>
          </item>
-         <item>
-          <widget class="QRadioButton" name="radioButtonPointer">
-           <property name="text">
-            <string>Selecionar</string>
+         <item row="2" column="0">
+          <widget class="QCheckBox" name="cbYellow">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
            </property>
-           <property name="icon">
-            <iconset>
-             <normaloff>images/pointer.png</normaloff>images/pointer.png</iconset>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 255, 0);
+color: rgb(255, 255, 0);</string>
+           </property>
+           <property name="text">
+            <string>Yellow</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QCheckBox" name="cbMagenta">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 0, 255);</string>
+           </property>
+           <property name="text">
+            <string>Pink</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QCheckBox" name="cbBlue">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 0, 255);</string>
+           </property>
+           <property name="text">
+            <string>Blue</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QCheckBox" name="cbGray">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(127, 127, 127);</string>
+           </property>
+           <property name="text">
+            <string>Grey</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QCheckBox" name="cbBlack">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string>Black</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QCheckBox" name="cbDarkRed">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(128, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string>Wine</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QCheckBox" name="cbDarkYellow">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(128, 128, 0);</string>
+           </property>
+           <property name="text">
+            <string>Olive</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QCheckBox" name="cbGreen">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(0, 170, 0);</string>
+           </property>
+           <property name="text">
+            <string>Green</string>
            </property>
           </widget>
          </item>
         </layout>
-       </item>
-       <item>
-        <widget class="QComboBox" name="zoomComboBox"/>
-       </item>
-       <item>
-        <widget class="QPushButton" name="buttonClearScene">
-         <property name="text">
-          <string>Limpar tudo</string>
-         </property>
-         <property name="icon">
-          <iconset>
-           <normaloff>images/erase.png</normaloff>images/erase.png</iconset>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="buttonDelete">
-         <property name="text">
-          <string>Deletar</string>
-         </property>
-         <property name="icon">
-          <iconset>
-           <normaloff>images/delete.png</normaloff>images/delete.png</iconset>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="buttonSendFront">
-         <property name="text">
-          <string>Para frente</string>
-         </property>
-         <property name="icon">
-          <iconset>
-           <normaloff>images/bringtofront.png</normaloff>images/bringtofront.png</iconset>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="buttonSendBack">
-         <property name="text">
-          <string>Para trás</string>
-         </property>
-         <property name="icon">
-          <iconset>
-           <normaloff>images/sendtoback.png</normaloff>images/sendtoback.png</iconset>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <widget class="QGraphicsView" name="graphicsView"/>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QGroupBox" name="groupBox">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>180</y>
-      <width>220</width>
-      <height>170</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(218, 218, 218);</string>
-    </property>
-    <property name="title">
-     <string>Selecionar Cores</string>
-    </property>
-    <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="0">
-      <widget class="QCheckBox" name="cbRed">
-       <property name="font">
-        <font>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(255, 0, 0);</string>
-       </property>
-       <property name="text">
-        <string>Vermelho</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="1">
-      <widget class="QCheckBox" name="cbCyan">
-       <property name="font">
-        <font>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(0, 255, 255);
-</string>
-       </property>
-       <property name="text">
-        <string>Aqua</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QCheckBox" name="cbBlue">
-       <property name="font">
-        <font>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(0, 0, 255);</string>
-       </property>
-       <property name="text">
-        <string>Azul</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QCheckBox" name="cbGray">
-       <property name="font">
-        <font>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(127, 127, 127);</string>
-       </property>
-       <property name="text">
-        <string>Cinza</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0">
-      <widget class="QCheckBox" name="cbYellow">
-       <property name="font">
-        <font>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(255, 255, 0);
-color: rgb(255, 255, 0);</string>
-       </property>
-       <property name="text">
-        <string>Amarelo</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1">
-      <widget class="QCheckBox" name="cbDarkYellow">
-       <property name="font">
-        <font>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(128, 128, 0);</string>
-       </property>
-       <property name="text">
-        <string>Oliva</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="0">
-      <widget class="QCheckBox" name="cbGreen">
-       <property name="font">
-        <font>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(0, 170, 0);</string>
-       </property>
-       <property name="text">
-        <string>Verde</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="1">
-      <widget class="QCheckBox" name="cbDarkRed">
-       <property name="font">
-        <font>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(128, 0, 0);</string>
-       </property>
-       <property name="text">
-        <string>Bordô</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="0">
-      <widget class="QCheckBox" name="cbMagenta">
-       <property name="font">
-        <font>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(255, 0, 255);</string>
-       </property>
-       <property name="text">
-        <string>Magenta</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="1">
-      <widget class="QCheckBox" name="cbBlack">
-       <property name="font">
-        <font>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(0, 0, 0);</string>
-       </property>
-       <property name="text">
-        <string>Preto</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>30</y>
-      <width>214</width>
-      <height>139</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_3">
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_2">
-       <item>
-        <widget class="QLabel" name="label_6">
-         <property name="font">
-          <font>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>População inicial</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_2">
-         <property name="font">
-          <font>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Cruzamentos</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_3">
-         <property name="font">
-          <font>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Mutações</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_4">
-         <property name="font">
-          <font>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Gerações</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_3">
-       <property name="spacing">
-        <number>0</number>
-       </property>
-       <item>
-        <widget class="QLineEdit" name="lineEditInitPop">
-         <property name="accessibleName">
-          <string/>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="lineEditCrossings">
-         <property name="accessibleName">
-          <string/>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="lineEditMutations">
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="lineEditGenerations">
-         <property name="accessibleName">
-          <string/>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>360</y>
-      <width>216</width>
-      <height>33</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_4">
-     <item>
-      <widget class="QPushButton" name="buttonSolution">
-       <property name="text">
-        <string>Gerar solução</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="buttonClearAll">
-       <property name="text">
-        <string>Limpar tudo</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>410</y>
-      <width>211</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_4">
-       <item>
-        <widget class="QLabel" name="label">
-         <property name="font">
-          <font>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Total de vértices</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_5">
-         <property name="font">
-          <font>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Total de arestas</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_5">
-       <item>
-        <widget class="QLabel" name="lbVertices">
-         <property name="text">
-          <string>----</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="lbEdges">
-         <property name="text">
-          <string>----</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>490</y>
-      <width>211</width>
-      <height>43</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_6">
-     <item>
-      <widget class="QLabel" name="label_7">
-       <property name="font">
-        <font>
-         <italic>true</italic>
-        </font>
-       </property>
-       <property name="text">
-        <string>Fitness máximo do
-cromossomo final:</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="lbFinalFit">
-       <property name="text">
-        <string>----</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
+       </widget>
+      </item>
+      <item>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="3" column="1">
+         <widget class="QLabel" name="lbFinalFit">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>----</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_7">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <italic>true</italic>
+           </font>
+          </property>
+          <property name="text">
+           <string>Maximum fitness
+of the final chromosome</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QPushButton" name="buttonClearAll">
+          <property name="text">
+           <string>Clear</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLabel" name="lbVertices">
+          <property name="text">
+           <string>----</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_5">
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Total of edges</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLabel" name="lbEdges">
+          <property name="text">
+           <string>----</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QPushButton" name="buttonSolution">
+          <property name="text">
+           <string>Generate solution</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label">
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Total of vertices</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QGraphicsView" name="graphicsView"/>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -571,32 +432,32 @@ cromossomo final:</string>
      <x>0</x>
      <y>0</y>
      <width>1099</width>
-     <height>27</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuArquivo">
     <property name="title">
-     <string>Arquivo</string>
+     <string>&amp;File</string>
     </property>
     <addaction name="actionSair"/>
    </widget>
    <widget class="QMenu" name="menuItem">
     <property name="title">
-     <string>Item</string>
+     <string>&amp;Item</string>
     </property>
     <addaction name="actionDeletar"/>
-    <addaction name="actionTrazer_para_frente"/>
-    <addaction name="actionLevar_para_tr_s"/>
+    <addaction name="actionBringToFront"/>
+    <addaction name="actionSendToBack"/>
    </widget>
    <widget class="QMenu" name="menuAjuda">
     <property name="title">
-     <string>Ajuda</string>
+     <string>&amp;Help</string>
     </property>
     <addaction name="actionSobre"/>
    </widget>
    <widget class="QMenu" name="menuExemplos">
     <property name="title">
-     <string>Exemplos</string>
+     <string>&amp;Examples</string>
     </property>
     <addaction name="actionMapaBrasil"/>
    </widget>
@@ -612,11 +473,20 @@ cromossomo final:</string>
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="actionVertex"/>
+   <addaction name="actionEdge"/>
+   <addaction name="actionSelect"/>
+   <addaction name="actionZoom_Out"/>
+   <addaction name="actionZoom_In"/>
+   <addaction name="actionDelete"/>
+   <addaction name="actionBringToFront"/>
+   <addaction name="actionSendToBack"/>
+   <addaction name="actionClearScene"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionSair">
    <property name="text">
-    <string>Sair</string>
+    <string>&amp;Quit</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+Q</string>
@@ -624,7 +494,7 @@ cromossomo final:</string>
   </action>
   <action name="actionSobre">
    <property name="text">
-    <string>&amp;Sobre</string>
+    <string>&amp;About</string>
    </property>
    <property name="shortcutContext">
     <enum>Qt::WindowShortcut</enum>
@@ -634,25 +504,45 @@ cromossomo final:</string>
    <property name="text">
     <string>Deletar</string>
    </property>
-  </action>
-  <action name="actionTrazer_para_frente">
-   <property name="text">
-    <string>Trazer para frente</string>
+   <property name="toolTip">
+    <string>Delete</string>
    </property>
   </action>
-  <action name="actionLevar_para_tr_s">
+  <action name="actionBringToFront">
+   <property name="icon">
+    <iconset theme="bottom">
+     <normaloff>images/bringtofront.png</normaloff>images/bringtofront.png</iconset>
+   </property>
    <property name="text">
-    <string>Levar para trás</string>
+    <string>Bring to Front</string>
+   </property>
+   <property name="toolTip">
+    <string>Bring to Front</string>
+   </property>
+  </action>
+  <action name="actionSendToBack">
+   <property name="icon">
+    <iconset theme="top">
+     <normaloff>images/sendtoback.png</normaloff>images/sendtoback.png</iconset>
+   </property>
+   <property name="text">
+    <string>Send to Back</string>
+   </property>
+   <property name="toolTip">
+    <string>Send to Back</string>
    </property>
   </action>
   <action name="actionMatriz_de_adjac_ncia">
    <property name="text">
-    <string>Matriz de adjacência</string>
+    <string>Adjacency Matrix</string>
+   </property>
+   <property name="toolTip">
+    <string>Adjacency Matrix</string>
    </property>
   </action>
   <action name="actionMapaBrasil">
    <property name="text">
-    <string>Mapa do Brasil</string>
+    <string>Brazil's Map</string>
    </property>
   </action>
   <action name="actionCromossomo_final">
@@ -660,7 +550,109 @@ cromossomo final:</string>
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>Cromossomo final</string>
+    <string>Final Chromosome</string>
+   </property>
+   <property name="toolTip">
+    <string>Final Chromosome</string>
+   </property>
+  </action>
+  <action name="actionVertex">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset theme="media-record" resource="myresources.qrc">
+     <normaloff>:/images/bold.png</normaloff>:/images/bold.png</iconset>
+   </property>
+   <property name="text">
+    <string>Vertex</string>
+   </property>
+   <property name="toolTip">
+    <string>Draw vertex</string>
+   </property>
+  </action>
+  <action name="actionEdge">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset theme="object-flip-horizontal" resource="myresources.qrc">
+     <normaloff>:/images/linepointer.png</normaloff>:/images/linepointer.png</iconset>
+   </property>
+   <property name="text">
+    <string>Edge</string>
+   </property>
+   <property name="toolTip">
+    <string>Draw edge</string>
+   </property>
+  </action>
+  <action name="actionSelect">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset theme="object-select">
+     <normaloff>images/pointer.png</normaloff>images/pointer.png</iconset>
+   </property>
+   <property name="text">
+    <string>Select</string>
+   </property>
+   <property name="toolTip">
+    <string>Selection Tool</string>
+   </property>
+  </action>
+  <action name="actionDelete">
+   <property name="icon">
+    <iconset theme="edit-delete" resource="myresources.qrc">
+     <normaloff>:/images/delete.png</normaloff>:/images/delete.png</iconset>
+   </property>
+   <property name="text">
+    <string>Delete</string>
+   </property>
+   <property name="toolTip">
+    <string>Delete Tool</string>
+   </property>
+  </action>
+  <action name="actionClearScene">
+   <property name="icon">
+    <iconset theme="edit-clear-all">
+     <normaloff>images/erase.png</normaloff>images/erase.png</iconset>
+   </property>
+   <property name="text">
+    <string>Clear All</string>
+   </property>
+   <property name="toolTip">
+    <string>Clear all Vertices and Edges</string>
+   </property>
+  </action>
+  <action name="actionZoom_In">
+   <property name="icon">
+    <iconset theme="zoom-in">
+     <normaloff>images/zoomin.png</normaloff>images/zoomin.png</iconset>
+   </property>
+   <property name="text">
+    <string>Zoom In</string>
+   </property>
+   <property name="toolTip">
+    <string>Zoom In</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl++</string>
+   </property>
+  </action>
+  <action name="actionZoom_Out">
+   <property name="icon">
+    <iconset theme="zoom-out">
+     <normaloff>images/zoomout.png</normaloff>images/zoomout.png</iconset>
+   </property>
+   <property name="text">
+    <string>Zoom Out</string>
+   </property>
+   <property name="toolTip">
+    <string>Zoom Out</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+-</string>
    </property>
   </action>
  </widget>

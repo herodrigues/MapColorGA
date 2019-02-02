@@ -1,31 +1,3 @@
-/****************************************************************************
-** Aplicação utilizando algoritmos genéticos, foi utilizada como critério
-** de avaliação para a disciplina de Inteligẽncia Artificial
-**
-** Ciência da Computação
-** Universidade Federal do Tocantins - UFT/Palmas
-**
-** MapColorGA foi desenvolvido para a demonstração de algoritmos genéticos
-** para resolver o problema de coloração de grafos.
-** A parte interativa foi baseada no exemplo que a Nokia disponibiliza
-** juntamente com o Qt e pode ser acessada neste link:
-** http://doc.qt.nokia.com/4.7-snapshot/graphicsview-diagramscene.html
-**
-** Peço se você for utilizar este software mantenha o nome dos autores.
-** Se for alterá-lo, adicione seu nome e mande um e-mail para
-** herynson@gmail.com descrevendo as alterações.
-**
-**
-** Desenvolvido por:
-**                   Herinson Rodrigues
-**                   Marcos Raylan
-**
-** Contato: Herinson Rodrigues (herynson@gmail.com)
-**          Marcos Raylan (marcos_raylan@hotmail.com)
-**
-**
-****************************************************************************/
-
 #include <QtWidgets>
 #include <QLabel>
 
@@ -45,6 +17,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     scene = new MainScene(ui->menuItem);
+    sceneScale = 100;
 
     scene->setSceneRect(QRectF(0, 0, 3000, 3000));
     connect(scene, SIGNAL(itemInserted(EllipseItem*)), this, SLOT(itemInserted()));
@@ -86,8 +59,10 @@ void MainWindow::changeEvent(QEvent *e)
     }
 }
 
-void MainWindow::mainButtonGroupClicked(int id)
+void MainWindow::actionGroupClicked(QAction *action)
 {
+    int id = action->data().toInt();
+
     switch(id) {
         case MainScene::InsertItem:
             scene->setMode(MainScene::InsertItem);
@@ -112,7 +87,7 @@ void MainWindow::deleteItem()
         scene->removeItem(item);
         scene->setItemColor(-1);
 
-        // se todos os items selecionados forem deletados, 'limpar' a matriz de adjacencia e zerar a contagem dos vertices
+        // if all items were deleted, clear the adjancency matrix and set the vertices to zero
         if(scene->items().isEmpty())
             clearScene();
     }
@@ -120,48 +95,59 @@ void MainWindow::deleteItem()
 
 void MainWindow::itemInserted()
 {
-    scene->setMode(MainScene::Mode(mainButtonGroup->checkedId()));
+    scene->setMode(MainScene::Mode());
 }
 
 void MainWindow::connectSignalsAndSlots() {
-    QStringList scales;
-    scales << tr("50%") << tr("75%") << tr("100%") << tr("125%") << tr("150%");
+    connect(ui->actionZoom_In, SIGNAL(triggered()), this, SLOT(onZoomIn()));
+    connect(ui->actionZoom_Out, SIGNAL(triggered()), this, SLOT(onZoomOut()));
 
-    ui->zoomComboBox->addItems(scales);
-    ui->zoomComboBox->setCurrentIndex(2);
+    actionGroup = new QActionGroup(this);
+    actionGroup->addAction(ui->actionVertex);
+    actionGroup->addAction(ui->actionEdge);
+    actionGroup->addAction(ui->actionSelect);
 
-    connect(ui->zoomComboBox, SIGNAL(currentIndexChanged(QString)), this, SLOT(sceneScaleChanged(QString)));
-
-    mainButtonGroup = new QButtonGroup;
-    mainButtonGroup->addButton(ui->radioButtonItem, int(MainScene::InsertItem));
-    mainButtonGroup->addButton(ui->radioButtonEdge, int(MainScene::InsertLine));
-    mainButtonGroup->addButton(ui->radioButtonPointer, int(MainScene::MoveItem));
-
-    connect(mainButtonGroup, SIGNAL(buttonClicked(int)), this, SLOT(mainButtonGroupClicked(int)));
-
-    connect(ui->buttonSendFront, SIGNAL(clicked()), this, SLOT(bringToFront()));
-    connect(ui->buttonSendBack, SIGNAL(clicked()), this, SLOT(sendToBack()));
-    connect(ui->buttonDelete, SIGNAL(clicked()), this, SLOT(deleteItem()));
+    connect(actionGroup, SIGNAL(triggered(QAction*)), this, SLOT(actionGroupClicked(QAction*)));
 
     connect(ui->actionSobre, SIGNAL(triggered()), this, SLOT(about()));
-    connect(ui->actionDeletar, SIGNAL(triggered()), this, SLOT(deleteItem()));
-    connect(ui->actionTrazer_para_frente, SIGNAL(triggered()), this, SLOT(bringToFront()));
-    connect(ui->actionLevar_para_tr_s, SIGNAL(triggered()), this, SLOT(sendToBack()));
+    connect(ui->actionDelete, SIGNAL(triggered()), this, SLOT(deleteItem()));
+    connect(ui->actionBringToFront, SIGNAL(triggered()), this, SLOT(bringToFront()));
+    connect(ui->actionSendToBack, SIGNAL(triggered()), this, SLOT(sendToBack()));
     connect(ui->actionMapaBrasil, SIGNAL(triggered()), this, SLOT(drawBrMap()));
 
     connect(ui->buttonSolution, SIGNAL(clicked()), this, SLOT(generateSolution()));
     connect(ui->buttonClearAll, SIGNAL(clicked()), this, SLOT(clearLineEdits()));
-    connect(ui->buttonClearScene, SIGNAL(clicked()), this, SLOT(clearScene()));
+    connect(ui->actionClearScene, SIGNAL(triggered()), this, SLOT(clearScene()));
 }
 
-void MainWindow::sceneScaleChanged(const QString &scale)
+void MainWindow::onZoomIn()
 {
-    double newScale = scale.left(scale.indexOf(tr("%"))).toDouble() / 100.0;
+    sceneScale += 25;
+
+    if (sceneScale >= 175) {
+        sceneScale = 175;
+    }
+
+    double newScale = sceneScale / 100.0;
     QMatrix oldMatrix = ui->graphicsView->matrix();
     ui->graphicsView->resetMatrix();
     ui->graphicsView->translate(oldMatrix.dx(), oldMatrix.dy());
     ui->graphicsView->scale(newScale, newScale);
+}
 
+void MainWindow::onZoomOut()
+{
+    sceneScale -= 25;
+
+    if (sceneScale <= 25) {
+        sceneScale = 25;
+    }
+
+    double newScale = sceneScale / 100.0;
+    QMatrix oldMatrix = ui->graphicsView->matrix();
+    ui->graphicsView->resetMatrix();
+    ui->graphicsView->translate(oldMatrix.dx(), oldMatrix.dy());
+    ui->graphicsView->scale(newScale, newScale);
 }
 
 void MainWindow::bringToFront()
@@ -200,9 +186,9 @@ void MainWindow::sendToBack()
 
 void MainWindow::about()
 {
-    QMessageBox::about(this, tr("Sobre GA Map Color"),
-                       QString::fromUtf8("<b>GA Map Color</b> mostra um exemplo "
-                          "simples de aplicação para coloração de grafos utilizando algoritmos genéticos"));
+    QMessageBox::about(this, tr("About GA Map Coloured"),
+                       QString::fromUtf8("<b>GA Map Color</b> is a simple application"
+                          "that demonstrates the use of genetic algorithm for colouring graphs"));
 
 }
 
@@ -242,11 +228,16 @@ void MainWindow::clearLineEdits() {
 }
 
 void MainWindow::generateSolution() {
-    ui->radioButtonItem->setChecked(false);
-    ui->radioButtonPointer->setChecked(true);
+    ui->actionVertex->setChecked(false);
+    ui->actionSelect->setChecked(true);
 
     scene->setMode(MainScene::MoveItem);
     MapColorGA myGA;
+
+    progressDialog = new QProgressDialog("Task in progress...", "Cancel", 0, myGA.getGenerations(), this);
+    progressDialog->setWindowModality(Qt::WindowModal);
+    progressDialog->setMinimum(0);
+    progressDialog->setMaximum(0);
 
     int count = 0;
     vector<int> colors;
@@ -272,16 +263,16 @@ void MainWindow::generateSolution() {
     bool check = ui->lineEditCrossings->text().isEmpty() || ui->lineEditGenerations->text().isEmpty() ||
                        ui->lineEditInitPop->text().isEmpty() || ui->lineEditMutations->text().isEmpty();;
 
-    if(count == 0) QMessageBox::about(this, "Alerta!", "Selecione ao menos 1 cor!");
-    else if(check) QMessageBox::about(this, "Alerta!", "Preencha todos os campos!");
-    else if(scene->items().isEmpty()) QMessageBox::about(this, "Alerta!", "Desenhe um grafo ou insira um modelo no menu Exemplos");
+    if(count == 0) QMessageBox::about(this, "Alert!", "Select at least one colour!");
+    else if(check) QMessageBox::about(this, "Alert!", "Fill out all the fields!");
+    else if(scene->items().isEmpty()) QMessageBox::about(this, "Alert!", "Draw a graph or insert one using the Examples menu");
     else {
         ui->lbVertices->setText(QString::number(scene->getTotalVertices()));
         ui->lbEdges->setText(QString::number(scene->getTotalEdges()));
 
         myGA.setMyGenes(scene->getTotalVertices());
 
-        srand(time(NULL));
+        srand(static_cast<unsigned int> (time(nullptr)));
         myGA.initPopulation(); // inicia população aleatoriamente e calcula os fitness iniciais
 
         multimap<int, string>::reverse_iterator it = myGA.getMyPopulation().rbegin();
@@ -290,6 +281,11 @@ void MainWindow::generateSolution() {
         int i;
 
         for(i = 0; i < myGA.getGenerations(); i++) {
+            progressDialog->setValue(i);
+
+            if (progressDialog->wasCanceled())
+                break;
+
             myGA.crossing();    // realiza cruzamentos e calcula os fitness dos filhos
             myGA.mutation();    // realiza mutação e recalcula os fitness dos filhos
             myGA.selection();   // realiza seleção e inserção dos novos filhos na população inicial
@@ -304,7 +300,7 @@ void MainWindow::generateSolution() {
 
         /// colorindo grafo com cromossomo de maior fitness
         string str = it->second;
-        int j = it->second.size()-1;
+        unsigned long int j = it->second.size() - 1;
         ui->lbFinalFit->setText(QString::number(it->first));
         QList<QGraphicsItem *> items = scene->items();
 
@@ -318,11 +314,13 @@ void MainWindow::generateSolution() {
         scene->setItemColor(-1);
         QString result;
 
-        if(it->first == scene->getTotalEdges()*2) result = "Achei a solução ótima na " + QString::number(i+1) + "ª geração!";
-        else result = "Não achei solução ótima!";
+        if(it->first == scene->getTotalEdges()*2) result = "I found an optimum solution at " + QString::number(i+1) + "ª generation!";
+        else result = "I could not find any optimum solution!";
 
-        QMessageBox::about(this, "Resultado", result);
+        QMessageBox::about(this, "Final Result", result);
         ui->actionCromossomo_final->setEnabled(true);
+
+        progressDialog->setMaximum(myGA.getGenerations());
     }
 }
 
@@ -336,4 +334,3 @@ void MainWindow::clearScene() {
     ui->lbFinalFit->setText("0");
     ui->lbVertices->setText("0");
 }
-
